@@ -54,6 +54,6 @@ echo "vm2" > /etc/hostname
 #INSTALL APACHE
 apt install -y apache2
 sed -i '/Listen/d' "/etc/apache2/ports.conf"
-echo "Listen 10.10.10.20:80" >> "/etc/apache2/ports.conf"
+echo "Listen $VM2_IP:80" >> "/etc/apache2/ports.conf"
 systemctl restart apache2
 
