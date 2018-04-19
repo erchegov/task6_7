@@ -90,7 +90,7 @@ echo "server {" > /etc/nginx/sites-available/default
 echo "listen $NGINX_PORT ssl;" >> /etc/nginx/sites-available/default 
 echo "server_name vm1;" >> /etc/nginx/sites-available/default
 echo "location / {"  >> /etc/nginx/sites-available/default
-echo "proxy_pass http://10.10.10.20/;" >> /etc/nginx/sites-available/default
+echo "proxy_pass http://"'$IP_CA'"/;" >> /etc/nginx/sites-available/default
 echo "proxy_set_header   X-Real-IP "'$remote_addr'";" >> /etc/nginx/sites-available/default
 echo "proxy_set_header   Host "'$http_host'";" >> /etc/nginx/sites-available/default
 echo "proxy_set_header   X-Forwarded-For "'$proxy_add_x_forwarded_for'";" >> /etc/nginx/sites-available/default
